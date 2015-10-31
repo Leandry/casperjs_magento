@@ -1,0 +1,23 @@
+{
+  "name": "sample",
+  "version": "0.0.1",
+  "description": "Frontend tests on Magento with CasperJS",
+  "dependencies": {
+    "underscore": "^1.5.2",
+    "casperjs": "^1.1.0-beta3",
+    "phantomjs": "^1.9.7-1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "casperjs --pre=config.js test tests/ --url=$npm_config_url"
+  },
+  "keywords": [
+    "magento",
+    "casperjs"
+  ],
+  "author": "Leandry",
+  "bugs": {
+    "url": "https://github.com/Leandry/casperjs_magento"
+  },
+  "homepage": "http://atwix.com"
+}
