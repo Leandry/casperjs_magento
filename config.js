@@ -10,7 +10,6 @@ if (debug_mode) {
     casper.options.verbose = true;
     casper.options.logLevel = 'debug';
 }
-
 var colorizer = require('colorizer').create('Colorizer');
 
 /**
@@ -47,11 +46,11 @@ casper.options.httpStatusHandlers = {
  * Login credentials
  * ----------------------------------------------------------------------------
  */
-var login_user_firstname    = 'Atwix';
-var login_user_lastname     = 'Leandry';
-var login_user_middlename   = 'QA'
-var login_user_username     = 'leandry@atwix.com';
-var login_user_password     = 'PassWorsAtwix';
+var login_user_firstname    = 'FirstName';
+var login_user_lastname     = 'LastName';
+var login_user_middlename   = 'MiddleName';
+var login_user_username     = 'example@mail.com';
+var login_user_password     = 'PassWord';
 var login_user_password_bad = "badpassword";
 
 var user_address_company    = 'Atwix';
@@ -61,19 +60,12 @@ var user_address_region     = 'Florida';
 var user_address_postcode   = '33556';
 var user_address_telephone  = '1234567890';
 var user_address_fax        = '12345678';
-var user_admin_mail         = 'leandry@atwix.com';
 var user_address_coundry    = 'United States';
 
 /**
  * Product credentials
  * ----------------------------------------------------------------------------
  */
-var prod_name = 'Atwix Test simple Product';
-var prod_description = 'TEST PRODUCT';
-var prod_short_description = 'This is test product, do not process the order!!!!';
-var prod_SKU = 'atwix-test-simple-prod';
-var prod_url = 'atwix-test-simple-product';
-var product_name = 'Atwix Test simple Product';
 var prod_url_simple = 'madison-overear-headphones.html';
 var prod_name_simple = 'Madison Overear Headphones';
 var prod_url_conf ='men/new-arrivals/chelsea-tee.html';
@@ -97,30 +89,6 @@ if (!/\/$/.test(base_url)) {
     // We haven't trailing slash: add it
     base_url = base_url + '/';
 }
-
-var secure_url = base_url.replace('http', 'https');
-if (undefined === secure_url) {
-    // Secure URL isn't defined, we get the unsecure one instead
-    secure_url = base_url;
-} else if (!/\/$/.test(secure_url)) {
-    // We haven't trailing slash: add it
-    secure_url = secure_url + '/';
-}
-
-var admin_url = casper.cli.get('admin_url');
-if (undefined === admin_url) {
-    // Admin URL is secured by default, if not, specify the command line option
-    admin_url = secure_url + 'RoundTable/';
-} else if (!/\/$/.test(admin_url)) {
-    // We haven't trailing slash: add it
-    admin_url = admin_url + '/';
-}
-
-url_customer_account_index  = secure_url + 'customer/account/';
-url_customer_account_login  = secure_url + 'customer/account/login/';
-url_customer_account_create = secure_url + 'customer/account/create/';
-
-url_checkout_cart_index = secure_url + 'checkout/cart/';
 
 
 // Done for the test file
