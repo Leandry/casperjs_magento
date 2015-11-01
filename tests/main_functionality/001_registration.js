@@ -10,16 +10,16 @@ casper.test.begin('001 Registration new customer ', function suite() {
         this.test.comment('Open and check registration customer page');
         this.test.assertHttpStatus(200);
         this.test.assertUrlMatch(base_url +'customer/account/create/', 'You on the registration page');
-        this.test.assertSelectorHasText('div.page-title', 'Create an Account', 'Page title - exist');
+        this.test.assertSelectorHasText('div.page-title', 'Create an Account', 'Page title - is present');
         this.test.comment('Check form input fields');
-        this.test.assertExist('#firstname', 'First name input - exist');
-        this.test.assertExist('#lastname', 'Last name input - exist');
-        this.test.assertExist('#middlename', 'Middle name input - exist');
-        this.test.assertExist('#password', 'Password input - exist');
-        this.test.assertExist('#confirmation', 'Password confirmation name input - exist');
-        this.test.assertExist('#email_address', 'E-mail input - exist');
-        this.test.assertExist('#is_subscribed', 'Subscription checkbox - exist');
-        this.test.assertExist('#form-validate div.buttons-set button.button', 'Submit button - exist');
+        this.test.assertExist('#firstname', 'First name input - is present');
+        this.test.assertExist('#lastname', 'Last name input - is present');
+        this.test.assertExist('#middlename', 'Middle name input - is present');
+        this.test.assertExist('#password', 'Password input - is present');
+        this.test.assertExist('#confirmation', 'Password confirmation name input - is present');
+        this.test.assertExist('#email_address', 'E-mail input - is present');
+        this.test.assertExist('#is_subscribed', 'Subscription checkbox - is present');
+        this.test.assertExist('#form-validate div.buttons-set button.button', 'Submit button - is present');
         this.test.pass('Opened and checked registration customer page')
     });
     casper.then(function(){
@@ -53,13 +53,13 @@ casper.test.begin('001 Registration new customer ', function suite() {
         this.test.comment('Check successful registration and Logout');
         this.test.assertHttpStatus(200);
         this.test.assertUrlMatch(base_url + 'customer/account/index/', 'You on the My account page');
-        this.test.assertSelectorHasText('div.dashboard li.success-msg', 'Thank you for registering with Madison Island.', 'Success msg - exist');
+        this.test.assertSelectorHasText('div.dashboard li.success-msg', 'Thank you for registering with Madison Island.', 'Success msg - is present');
         this.test.pass('Registration successful')
     });
 
     casper.then(function(){
         this.test.comment('Check customer logout');
-        this.test.assertSelectorHasText('#header-account div.links', 'Log Out', 'Log Out link - exist');
+        this.test.assertSelectorHasText('#header-account div.links', 'Log Out', 'Log Out link - is present');
         this.clickLabel('Log Out', 'a');
         this.waitForUrl(base_url + 'customer/account/logoutSuccess/');
     });

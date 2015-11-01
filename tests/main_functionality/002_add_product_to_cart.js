@@ -11,22 +11,22 @@ casper.test.begin('002 Add product to cart and check shopping cart', function su
         this.test.assertHttpStatus(200);
         this.test.comment('Open simple product page ('+ prod_name_simple + ')');
         this.test.info('Current location is ' + this.getCurrentUrl());
-        this.test.assertSelectorExist('div.add-to-cart-buttons button.btn-cart', 'Add to cart btn - exist');
-        this.test.assertSelectorHasText('div.product-shop div.product-name span.h1', prod_name_simple, 'Product name - exist');
-        this.test.assertSelectorExist('div.product-shop div.price-box span.price', 'Product price - exist');
-        this.test.assertSelectorExist('#qty', 'Qty input field - exist');
+        this.test.assertSelectorExist('div.add-to-cart-buttons button.btn-cart', 'Add to cart btn - is present');
+        this.test.assertSelectorHasText('div.product-shop div.product-name span.h1', prod_name_simple, 'Product name - is present');
+        this.test.assertSelectorExist('div.product-shop div.price-box span.price', 'Product price - is present');
+        this.test.assertSelectorExist('#qty', 'Qty input field - is present');
         this.test.pass('Product page have been opened successfully');
     });
     casper.thenClick('div.add-to-cart-buttons button.btn-cart', function(){
         this.waitForUrl(base_url + 'checkout/cart/');
         this.test.info('Current location is ' + this.getCurrentUrl());
         this.test.assertHttpStatus(200);
-        this.test.assertSelectorHasText('ul.messages li.success-msg', prod_name_simple +' was added to your shopping cart.', 'Success msg - exist');
+        this.test.assertSelectorHasText('ul.messages li.success-msg', prod_name_simple +' was added to your shopping cart.', 'Success msg - is present');
         this.test.assertElementCount('#shopping-cart-table tbody tr', 1, '1 expected products have found ');
-        this.test.assertExist('div.page  div.cart-totals-wrapper button.button.btn-proceed-checkout.btn-checkout', 'Checkout button - exist');
-        this.test.assertExist('#discount-coupon-form', 'Discount coupon form - exist');
-        this.test.assertExist('div.cart-forms div.shipping', 'ESTIMATE SHIPPING AND TAX form - exist');
-        this.test.assertExist('#shopping-cart-totals-table', 'Totals table exist');
+        this.test.assertExist('div.page  div.cart-totals-wrapper button.button.btn-proceed-checkout.btn-checkout', 'Checkout button - is present');
+        this.test.assertExist('#discount-coupon-form', 'Discount coupon form - is present');
+        this.test.assertExist('div.cart-forms div.shipping', 'ESTIMATE SHIPPING AND TAX form - is present');
+        this.test.assertExist('#shopping-cart-totals-table', 'Totals table is present');
         this.test.pass('Shopping cart opened successfully')
     });
 
@@ -34,18 +34,18 @@ casper.test.begin('002 Add product to cart and check shopping cart', function su
         this.test.assertHttpStatus(200);
         this.test.comment('Open configurable product page ('+ prod_url_conf + ')');
         this.test.info('Current location is ' + this.getCurrentUrl());
-        this.test.assertSelectorExist('div.add-to-cart-buttons button.btn-cart', 'Add to cart btn - exist');
-        this.test.assertSelectorHasText('div.product-shop div.product-name span.h1', prod_name_conf, 'Product name - exist');
-        this.test.assertSelectorExist('div.product-shop div.price-box span.price', 'Product price - exist');
-        this.test.assertSelectorExist('#qty', 'Qty input field - exist');
+        this.test.assertSelectorExist('div.add-to-cart-buttons button.btn-cart', 'Add to cart btn - is present');
+        this.test.assertSelectorHasText('div.product-shop div.product-name span.h1', prod_name_conf, 'Product name - is present');
+        this.test.assertSelectorExist('div.product-shop div.price-box span.price', 'Product price - is present');
+        this.test.assertSelectorExist('#qty', 'Qty input field - is present');
         this.test.comment('Set options and add product to the cart');
-        this.test.assertExist('#product-options-wrapper', 'Product options - exist');
+        this.test.assertExist('#product-options-wrapper', 'Product options - is present');
         //              Click on white color swatch
-        this.test.assertExist('#configurable_swatch_color', 'Color swatch - exist');
+        this.test.assertExist('#configurable_swatch_color', 'Color swatch - is present');
         this.click('#configurable_swatch_color li.option-white a span.swatch-label');
         this.test.assertSelectorExist('#configurable_swatch_color li.option-white.selected', 'Color swatch has been selected');
         //              Click on L size
-        this.test.assertExist('#configurable_swatch_size', 'Side swatch - exist');
+        this.test.assertExist('#configurable_swatch_size', 'Side swatch - is present');
         this.test.assertSelectorExist('#configurable_swatch_size li.option-s.not-available', 'S size is not available for the white color swatch');
         this.click('#configurable_swatch_size li.option-l a span.swatch-label');
         this.test.assertSelectorExist('#configurable_swatch_size li.option-l.selected');
@@ -67,12 +67,12 @@ casper.test.begin('002 Add product to cart and check shopping cart', function su
         this.waitForUrl(base_url + 'checkout/cart/');
         this.test.info('Current location is ' + this.getCurrentUrl());
         this.test.assertHttpStatus(200);
-        this.test.assertSelectorHasText('ul.messages li.success-msg', prod_name_conf +' was added to your shopping cart.', 'Success msg - exist');
+        this.test.assertSelectorHasText('ul.messages li.success-msg', prod_name_conf +' was added to your shopping cart.', 'Success msg - is present');
         this.test.assertElementCount('#shopping-cart-table tbody tr', 2, '2 expected products have found ');
-        this.test.assertExist('div.page  div.cart-totals-wrapper button.button.btn-proceed-checkout.btn-checkout', 'Checkout button - exist');
-        this.test.assertExist('#discount-coupon-form', 'Discount coupon form - exist');
-        this.test.assertExist('div.cart-forms div.shipping', 'ESTIMATE SHIPPING AND TAX form - exist');
-        this.test.assertExist('#shopping-cart-totals-table', 'Totals table exist');
+        this.test.assertExist('div.page  div.cart-totals-wrapper button.button.btn-proceed-checkout.btn-checkout', 'Checkout button - is present');
+        this.test.assertExist('#discount-coupon-form', 'Discount coupon form - is present');
+        this.test.assertExist('div.cart-forms div.shipping', 'ESTIMATE SHIPPING AND TAX form - is present');
+        this.test.assertExist('#shopping-cart-totals-table', 'Totals table is present');
         this.test.pass('Shopping cart opened successfully')
     });
     casper.thenClick('#empty_cart_button', function(){
