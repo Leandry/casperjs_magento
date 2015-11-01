@@ -23,7 +23,7 @@ casper.options.viewportSize = {
     width: 1200,
     height: 900
 };
-casper.options.waitTimeout = 5000;
+casper.options.waitTimeout = 15000;
 /**
  * The HTTP responses
  * ----------------------------------------------------------------------------
