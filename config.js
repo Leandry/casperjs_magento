@@ -74,6 +74,10 @@ var prod_short_description = 'This is test product, do not process the order!!!!
 var prod_SKU = 'atwix-test-simple-prod';
 var prod_url = 'atwix-test-simple-product';
 var product_name = 'Atwix Test simple Product';
+var prod_url_simple = 'madison-overear-headphones.html';
+var prod_name_simple = 'Madison Overear Headphones';
+var prod_url_conf ='men/new-arrivals/chelsea-tee.html';
+var prod_name_conf = 'Chelsea Tee';
 
 
  /* Utils, XPath, FileSystem
