@@ -75,6 +75,11 @@ casper.test.begin('002 Add product to cart and check shopping cart', function su
         this.test.assertExist('#shopping-cart-totals-table', 'Totals table exist');
         this.test.pass('Shopping cart opened successfully')
     });
+    casper.thenClick('#empty_cart_button', function(){
+       this.test.comment('Click empty cart button');
+        this.test.assertSelectorHasText('div.page div.page-title  h1', 'Shopping Cart is Empty', 'Shopping Cart is Empty');
+        this.test.assertSelectorHasText('div.page div.cart-empty', 'You have no items in your shopping cart.', 'You have no items in your shopping cart.');
+    });
 
     casper.run(function () {
             this.test.done();
