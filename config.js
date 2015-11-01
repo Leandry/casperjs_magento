@@ -49,7 +49,15 @@ casper.options.httpStatusHandlers = {
 var login_user_firstname    = 'FirstName';
 var login_user_lastname     = 'LastName';
 var login_user_middlename   = 'MiddleName';
-var login_user_username     = 'example@mail.com';
+var login_user_username     = casper.cli.get("email");
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(login_user_username))
+{
+    login_user_username
+}
+else{
+    casper.die('Please enter valid email or add email to command line  --email="yourmail@example.com" ');
+}
+
 var login_user_password     = 'PassWord';
 var login_user_password_bad = "badpassword";
 
